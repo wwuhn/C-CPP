@@ -22,7 +22,23 @@ void CChineseCode::UTF_8ToUnicode(wchar_t* pOut,char *pText)
 	uchar[0] = ((pText[1] & 0x03) << 6) + (pText[2] & 0x3F);
 	return;
 }
- 
+/*
+Unicode Big Endian(UTF-16/UCS-2大端字节序
+Unicode little Endian(UTF-16/UCS-2小端字节序
+标识位：0xFFFE
+换行符标识位：0x0A000D00
+汉字编码：采用2个字节
+
+UTF-8-bom
+标识位：0XBFBBEF（3个字节）
+换行符：0x0A0D
+汉字采用三个字节编码
+UTF-8
+标识位：无
+换行符：0X0A0D
+汉字采用三个字节编码
+*/
+
 void CChineseCode::UnicodeToUTF_8(char* pOut,wchar_t* pText)
 {
 	// 注意 WCHAR高低字的顺序,低字节在前，高字节在后
