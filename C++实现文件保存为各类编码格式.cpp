@@ -48,10 +48,22 @@ std::locale::global:
 实际上utf-8编码文件还可以分为包含BOM和无BOM两种文件，区分就在文件头。
 
 实现它很麻烦，自从有了C11之后就很简单了，但是请不要在MAC OS7及其以下使用，因为系统根本不支持C11。你只能采用平台object-c的API实现了。
+/*
+Unicode Big Endian(UTF-16/UCS-2大端字节序
+Unicode little Endian(UTF-16/UCS-2小端字节序
+标识位：0xFFFE
+换行符标识位：0x0A000D00
+汉字编码：采用2个字节
+
 UTF-8-bom
 标识位：0XBFBBEF（3个字节）
-换 行符：0x0A0D
+换行符：0x0A0D
 汉字采用三个字节编码
+UTF-8
+标识位：无
+换行符：0X0A0D
+汉字采用三个字节编码
+*/
 
 
 
