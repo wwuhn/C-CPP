@@ -18,3 +18,34 @@ int main()
     printf("x=%lf,x的平方根是:%lf\n", x, x1);
     return 0;
 }
+
+
+
+#include <stdio.h>
+double sqrt(double x)
+{
+    double x0, x1,diff;
+	x0 = x / 2;
+	x1 = (x0 + x / x0) / 2;
+	diff = x1-x0;
+	if(diff<0) diff=-diff;
+	while (diff >= 1e-5)			//1e-5相当于0.00001
+	{
+		x0 = x1;
+		x1 = (x0 + x / x0) / 2;
+		diff = x1-x0;
+		if(diff<0) diff=-diff;
+	}
+    return x1;
+}
+
+int main()
+{
+	double x;
+	printf("输入x：");
+	scanf("%lf", &x);
+
+	printf("x=%lf,x的平方根是:%lf\n", x,sqrt(x));
+    while(1);
+	return 0;
+}
