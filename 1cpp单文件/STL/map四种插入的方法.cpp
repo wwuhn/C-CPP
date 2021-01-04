@@ -10,6 +10,7 @@ int main()
 	m.insert(make_pair(2,22));
 	m.insert(map<int,int>::value_type(3,33));
 	m[4]=44;
+
 	for(map<int,int>::iterator it=m.begin();it!=m.end();it++)
 	{
 		//cout<<"key:"<<it->first<<" value: "<<it->second<<endl;

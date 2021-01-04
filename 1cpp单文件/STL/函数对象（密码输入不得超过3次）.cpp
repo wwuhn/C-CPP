@@ -2,7 +2,9 @@
 #include <string>
 #include <iostream>
 using namespace std;
+
 enum PassStatus {pass,failed,reject};	//枚举类型定义密码状态
+
 class DetectPass
 {
 public:
@@ -13,6 +15,7 @@ protected:
 	int numOfRun; 		//用成员数据记录输入密码的次数(对象状态)
 	string getpass();	//（模拟）通过数据库获取密码
 };
+
 //DetectPass.cpp
 //#include "DetectPass.h"
 DetectPass::DetectPass()
@@ -20,10 +23,12 @@ DetectPass::DetectPass()
 	cout <<"构造函数对象..." <<endl;
 	numOfRun=0;
 }
+
 DetectPass::~DetectPass()
 {
 	cout <<"析构函数对象..." <<endl;
 }
+
 PassStatus DetectPass::operator() (string passstr)
 {
 	cout <<"这是第" <<++numOfRun <<"次输入密码，";//状态更新
@@ -65,7 +70,7 @@ int main()
 		cout <<"请输入密码：";
 		cin >>input;
 	}while(password(input)==failed); //看起来像是调用password函数
-	cin.get();cin.get();
+	while(1);
 	return 0;	
 }
 /*

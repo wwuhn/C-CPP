@@ -12,7 +12,6 @@ struct type_traits {
     typedef False_type has_xxx;   // 默认为False_type
 };
 
-
 template <>  // 特化A
 struct type_traits<A> {
     typedef True_type has_xxx;
@@ -37,8 +36,6 @@ void _test(True_type) {
 void _test(False_type) {
     cout << "0" << endl;
 }
-
-
 
 int main() {
     struct A a;

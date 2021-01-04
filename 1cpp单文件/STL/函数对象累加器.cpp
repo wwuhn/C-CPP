@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 struct Counter
 {
 private:
@@ -9,6 +10,7 @@ public:
 	int operator()(){return base;}
 	void operator()(int n){base+=n;}
 };
+
 int main()
 {
 	Counter counter;

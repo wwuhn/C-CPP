@@ -2,9 +2,11 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
+
 int main(void){
     int a[]={1,3,4,6,8,7};
     vector<int> arr(a,a+6);
+
     vector<int> ::iterator begin;
     /*Initialize a vector*/
     cout<<"Initialize vector arr with a:"<<endl;

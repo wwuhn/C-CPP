@@ -8,9 +8,10 @@ struct MyIter{
     MyIter(T* p =0):ptr(p){}
     T& operator*() const {return *ptr;}
 };
+
 template <class T>
-struct MyIter <T*>{   //T*代表T为原生指针，这便是T为任意型别的一个更进一步的条件限制
-    typedef T value_type; // 内嵌型别声明
+struct MyIter <T*>{         //T*代表T为原生指针，这便是T为任意型别的一个更进一步的条件限制
+    typedef T value_type;   // 内嵌型别声明
     T* ptr;
     MyIter(T* p =0):ptr(p){}
     T& operator*() const {return *ptr;}
